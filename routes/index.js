@@ -30,7 +30,6 @@ const getListings = function(req, res, next) {
 
 router.get("/", getListings, function(req, res) {
   // TODO write your code here
-  console.log(data);
   res.render("listings", {users: data});
 })
 //////////////////////////////////////////////////////////////////////////
@@ -99,7 +98,7 @@ router.get('/employed', getEmployed, function(req, res) {
 
 /////////////////////////////////////////////////////////////////////////////
 router.get('/listing/:id', function (req, res) {
-
+////why does this page lose all of the css properties???
   res.render("singleListing", {users: data[req.params.id -1]});
 })
 
