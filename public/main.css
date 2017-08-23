@@ -1,0 +1,121 @@
+body {
+font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1 a {
+  font-size: 48px;
+  color: darkcyan;
+  text-decoration: none;
+}
+
+.robot_container {
+  border: 2px solid gray;
+  border-radius: 10px;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 21%;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.robot_nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.robot_nav a {
+  text-decoration: none;
+  font-size: 32px;
+  color: gray;
+}
+
+.name {
+  font-size: 24px;
+  color: darkcyan;
+}
+
+.needsJob  {
+  color: red;
+}
+
+
+
+/*******************************
+ styling the listing page
+********************************/
+
+.listing_container {
+  flex-flow: row wrap;
+  display: flex;
+  justify-content: center;
+  margin: 150px auto;
+  width: 70%;
+}
+
+.avatar_container {
+
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.avatar_container img {
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.location, .job {
+margin: 5px 0px;
+}
+
+.basic_info h1 {
+  font-size: 48px;
+  margin-bottom: 5px;
+}
+
+
+.skills_box {
+flex: 1 1 100%;
+margin-top: 20px;
+}
+
+.skills, .education {
+  padding-right: 30px;
+  padding-left: 225px;
+  font-weight: bold;
+  text-align: right;
+}
+
+
+tr {
+  margin-top: 10px;
+}
+
+td {
+  margin: 0px 20px;
+  vertical-align: text-top;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+li {
+  list-style: none;
+  margin-top: 3px;
+  text-align: left;
+}

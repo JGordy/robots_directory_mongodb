@@ -1,0 +1,51 @@
+{{#users}}
+<div class="listing_container">
+  <div class="avatar_container">
+    <img src={{avatar}}>
+  </div>
+  <div class="basic_info">
+    <h1>{{name}}</h1>
+    {{#job}}
+    <p class="location">{{address.city}},{{address.country}} | <span class="job">{{job}}{{company}}</span></p>
+    <p>{{email}} | {{phone}}</p>
+    {{/job}}
+    {{^job}}
+    <p class="location">{{address.city}},{{address.country}} | <span class="needsJob">Available for hire</span></p>
+    <p>{{email}} | {{phone}}</p>
+    {{/job}}
+  </div>
+    <div class="skills_box">
+      <table>
+        {{#university}}
+        <tr>
+          <td class="education">Education</td>
+          <td>{{university}}</td>
+        </tr>
+        <tr>
+          <td class="skills">Skills</td>
+          <td>
+            <ul>
+              {{#skills}}
+              <li>{{.}}, </li>
+            {{/skills}}
+            </ul>
+          </td>
+        </tr>
+        {{/university}}
+        {{^university}}
+          <tr>
+            <td class="skills">Skills</td>
+            <td>
+              <ul>
+                {{#skills}}
+                <li>{{.}}, </li>
+              {{/skills}}
+              </ul>
+            </td>
+
+          </tr>
+        {{/university}}
+      </table>
+    </div>
+  </div>
+  {{/users}}

@@ -1,0 +1,13 @@
+{{#users}}
+<a class="robot_container" href="/listing/{{id}}">
+        <img src={{avatar}}>
+        <h3 class="name">{{name}}</h3>
+        {{#job}}
+          <h4>{{job}}</h4>
+          <h4>{{company}}</h4>
+        {{/job}}
+        {{^job}}
+          <h4 class="needsJob">Available for Hire</h4>
+        {{/job}}
+      </a>
+{{/users}}
