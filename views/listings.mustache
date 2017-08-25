@@ -1,6 +1,9 @@
 <div class="header">
   <h1><a href="/">Robot Directory</a></h1>
-  <p><a href="/logout">Log Out</a></p>
+  <div class="client_info">
+    <p>Logged In:  {{#client}}{{username}}{{/client}}</p>
+    <p><a href="/logout">Log Out</a></p>
+  </div>
 </div>
 <div class="robot_nav">
   <h3><a href="/employed">Currently Employed</a></h3>

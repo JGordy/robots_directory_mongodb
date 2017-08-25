@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../main.css">
+  </head>
+  <body>
+
+  {{#users}}
+  <div class="edit_page">
+
+
+  <div class="listing_container">
+    <div class="avatar_container">
+      <img src={{avatar}}>
+    </div>
+    <div class="basic_info">
+      <h1>{{name}}</h1>
+      {{#job}}
+      <p class="location">{{address.city}},{{address.country}} | <span class="job">{{job}}, {{company}}</span></p>
+      <p>{{email}} | {{phone}}</p>
+      {{/job}}
+      {{^job}}
+      <p class="location">{{address.city}},{{address.country}} | <span class="needsJob">Available for hire</span></p>
+      <p>{{email}} | {{phone}}</p>
+      {{/job}}
+    </div>
+      <div class="skills_box">
+        <table>
+          {{#university}}
+          <tr>
+            <td class="education">Education</td>
+            <td>{{university}}</td>
+          </tr>
+          <tr>
+            <td class="skills">Skills</td>
+            <td>
+              <ul>
+                {{#skills}}
+                <li>{{.}}, </li>
+              {{/skills}}
+              </ul>
+            </td>
+          </tr>
+          {{/university}}
+          {{^university}}
+            <tr>
+              <td class="skills">Skills</td>
+              <td>
+                <ul>
+                  {{#skills}}
+                  <li>{{.}}, </li>
+                {{/skills}}
+                </ul>
+              </td>
+
+            </tr>
+          {{/university}}
+        </table>
+      </div>
+    </div>
+    <!--  -->
+    <div class="edit_profile">
+
+      <form class="edit_section" action="/save/{{id}}" method="Post">
+        <h2>Edit Profile</h2>
+      <input class="editButtons" type="text" name="name" value="{{name}}" placeholder="Name" autofocus>
+      <input class="editButtons" type="email" name="email" value="{{email}}" placeholder="Email">
+      <input class="editButtons" type="text" name="username" value="{{username}}" placeholder="Username">
+      <input class="editButtons" type="text" name="university" value="{{university}}" placeholder="University">
+      <input class="editButtons" type="text" name="company" value="{{company}}" placeholder="Company">
+      <input class="editButtons" type="text" name="job" value="{{job}}" placeholder="Job">
+      <input class="editButtons" type="text" name="skills" value="{{skills}}" placeholder="Skills">
+      <input class="editButtons" type="text" name="phone" value="{{phone}}" placeholder="Phone">
+      <div class="edit_address">
+        <input class="editButtons" type="text" name="streetNum" value="{{address.street_Num}}" placeholder="Street Number">
+        <input class="editButtons" type="text" name="streetName" value="{{address.street_Name}}" placeholder="Street Name">
+        <input class="editButtons" type="text" name="city" value="{{address.city}}" placeholder="City">
+        <input class="editButtons" type="text" name="state" value="{{address.state_or_province}}" placeholder="State or Province">
+        <input class="editButtons" type="text" name="postal" value="{{address.postal_code}}" placeholder="Postal Code">
+        <input class="editButtons" type="text" name="country" value="{{address.country}}" placeholder="Country">
+      </div>
+      <button type="submit" name="button">Save Changes</button>
+      </form>
+
+    </div>
+
+    </div>
+    {{/users}}
+
+  </body>
+</html>

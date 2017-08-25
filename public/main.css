@@ -13,13 +13,16 @@ font-family: sans-serif;
   align-items: center;
 }
 
+.client_info {
+  margin: 0px 20px 0px 300px;
+}
+
 p a {
   background-color: gray;
   border: 1px solid darkcyan;
   border-radius: 5px;
   color: white;
   padding: 8px 16px;
-  margin: 0px 20px 0px 300px;
   text-decoration: none;
 }
 
@@ -202,4 +205,32 @@ li {
 
 .signup_section button {
   margin-bottom: 20px;
+}
+
+.edit_page {
+  display: flex;
+  margin-top: 75px;
+}
+
+.edit_section {
+    border-left: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+    padding-bottom: 20px;
+    width: 30%;
+}
+
+.editButtons {
+  height: 15px;
+  padding: 3px;
+  margin-top: 5px;
+}
+
+.edit_section button {
+  margin-top: 5px;
+}
+
+.edit_address input {
+width: 43%;
 }
