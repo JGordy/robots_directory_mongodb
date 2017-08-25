@@ -8,16 +8,16 @@ mongoose.connect("mongodb://localhost:27017/userDirectory");
 /////// will need to use requireLogin in middleware on my listings???????//////////////
 const requireLogin = function (req, res, next) {
   if (req.user) {
-    // console.log(req.user)
+    console.log(req.user)
     next()
   } else {
-    res.redirect('/');
+    res.redirect('/signup');
   }
 };
 
 const login = function (req, res, next) {
   if (req.user) {
-    res.redirect("/user")
+    res.redirect("/")
   } else {
     next();
   }
@@ -25,17 +25,9 @@ const login = function (req, res, next) {
 ////////////////////////////////////////////////
 /////////////authenticate stuffs/////////////////
 
-router.get("/", login, function(req, res) {
-
-console.log("NAWT USERRRRRRRRR");
-  res.render("signup", {
-      messages: res.locals.getMessages()
-  });
-});
-
 router.post('/', passport.authenticate('local', {
-    successRedirect: '/user',
-    failureRedirect: '/',
+    successRedirect: '/',
+    failureRedirect: '/signup',
     failureFlash: true
 }));
 
@@ -55,12 +47,14 @@ router.post("/signup", function(req, res) {
     job: req.body.job,
     skills: req.body.skills,
     phone: req.body.phone,
+    address: {
     street_num: req.body.streetNum,
     street_name: req.body.streetName,
     city: req.body.city,
     state_or_province: req.body.state,
     postal: req.body.postal,
     country: req.body.country
+    }
   }).then(function(data) {
     console.log(data);
     res.render("listings", {users: data})
@@ -86,7 +80,7 @@ router.get("/logout", function(req, res) {
 /////////////////////////////////////////////////
 let data = []; //  variable to store data
 
-router.get("/", function(req, res) {
+router.get("/", requireLogin, function(req, res) {
 
   User.find({}).sort("name")
   .then(function(users) {
@@ -101,15 +95,6 @@ router.get("/", function(req, res) {
 });
 
 /////////////////////////////////////////////////
-router.get("/", function(req, res) {
-// TODO write your code here
-
-
-
-
-
-});
-
 /////////////////////////
 //
 router.get('/looking', function (req, res) {

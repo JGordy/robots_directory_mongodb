@@ -7,6 +7,22 @@ font-family: sans-serif;
   flex-flow: row wrap;
 }
 
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+p a {
+  background-color: gray;
+  border: 1px solid darkcyan;
+  border-radius: 5px;
+  color: white;
+  padding: 8px 16px;
+  margin: 0px 20px 0px 300px;
+  text-decoration: none;
+}
+
 h1 {
   text-align: center;
 }
@@ -16,6 +32,7 @@ h1 a {
   color: darkcyan;
   text-decoration: none;
 }
+
 
 .robot_container {
   border: 2px solid gray;
